@@ -7,7 +7,7 @@ $(document).ready(function () {
     quizTimer(duration, display);
     setTimeout(() => {
       end();
-    }, 600200);
+    }, 600000);
   };
 
   $(".submit-answer").on("click", function (event) {
