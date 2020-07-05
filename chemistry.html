@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>WariQuiz</title>
+    <link type="text/css" rel="stylesheet" href="quiz.css" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link type="text/css" rel="stylesheet" href="./quizhome.css" />
+  </head>
+  <body
+    ontouchstart=""
+    background="http://arqmedia.tech/img/nikhil/chemistry.webp"
+  >
+    <div class="navbar">
+      <a href="index.html"
+        ><img
+          class="warikoo"
+          src="http://arqmedia.tech/img/nikhil/warikoo.png"
+          width="80px"
+          height="65px"
+      /></a>
+      <div class="timeRemaining">
+        Time remaining: <b><span id="time">25:00</span></b> minutes!
+      </div>
+    </div>
+    <h1>chemistry Quiz</h1>
+
+    <div class="questionBox">
+      <h2></h2>
+    </div>
+
+    <p id="image"></p>
+    <a href="./chemistry.html"
+      ><div id="try-again-container" style="display: none;">
+        <button id="try-again">Try Again</button>
+      </div></a
+    >
+    <ul>
+      <li><button class="submit-answer" id="0"></button></li>
+      <li><button class="submit-answer" id="1"></button></li>
+      <li><button class="submit-answer" id="2"></button></li>
+      <li><button class="submit-answer" id="3"></button></li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script language="javascript" src="chemistry.js"></script>
+
+    <div class="footer">
+      <center>
+        <p style="color: white;">
+          Made by
+          <a
+            href="https://www.instagram.com/nikhilthinks/"
+            style="color: hotpink;"
+            >Nikhil</a
+          >
+          with ❤ & js
+        </p>
+      </center>
+    </div>
+  </body>
+</html>
