@@ -17,7 +17,7 @@ $(document).ready(function () {
     setTimeout(function () {
       $(".submit-answer").removeClass("correctStyle incorrectStyle");
       start(questionNumber);
-    }, 500);
+    }, 800);
 
     questionNumber++;
   });
@@ -200,6 +200,7 @@ function answerCheck(userAnswer) {
     positiveScore = positiveScore + 20;
   } else {
     $("#" + userAnswer).addClass("incorrectStyle");
+    $("#" + correctAnswer).addClass("correctStyle");
     negativeScore = negativeScore + 5;
   }
 }

@@ -4,7 +4,7 @@ $(document).ready(function () {
   window.onload = function (event) {
     display = document.querySelector("#time");
     duration = 600;
-    quizTimer(duration,display);
+    quizTimer(duration, display);
     setTimeout(() => {
       end();
     }, 600200);
@@ -17,9 +17,9 @@ $(document).ready(function () {
     setTimeout(function () {
       $(".submit-answer").removeClass("correctStyle incorrectStyle");
       start(questionNumber);
-    }, 500);
+    }, 800);
 
-    questionNumber++; 
+    questionNumber++;
   });
 });
 
@@ -31,33 +31,28 @@ var questionNumber = 0,
 
 var allQuestions = [
   {
-    question:
-      'The image formed by retina of human eye is',
-    choices: ["Virtual and erect", "Real and inverted", "Virtual and inverted", "Real and erect"],
+    question: "The image formed by retina of human eye is",
+    choices: [
+      "Virtual and erect",
+      "Real and inverted",
+      "Virtual and inverted",
+      "Real and erect",
+    ],
     answer: 1,
   },
   {
     question: "The change in the focal length of human eye is caused due to",
-    choices: [
-      "Ciliary muscles",
-      "Pupil",
-      "Cornea",
-      "Iris",
-    ],
+    choices: ["Ciliary muscles", "Pupil", "Cornea", "Iris"],
     answer: 0,
   },
   {
-    question: "The least distance of distinct vision for a young adult with normal vision is",
-    choices: [
-      "25 m",
-      "20 m",
-      "25 cm",
-      "20 cm",
-    ],
+    question:
+      "The least distance of distinct vision for a young adult with normal vision is",
+    choices: ["25 m", "20 m", "25 cm", "20 cm"],
     answer: 2,
   },
   {
-    question: ' The persistence of vision for human eye is',
+    question: " The persistence of vision for human eye is",
     choices: [
       "1/10th of a second",
       "1/16th of a second",
@@ -67,67 +62,58 @@ var allQuestions = [
     answer: 1,
   },
   {
-    question: "The light sensitive cell present on retina and is sensitive to the intensity of light is",
+    question:
+      "The light sensitive cell present on retina and is sensitive to the intensity of light is",
     choices: ["Cones", "Rods", "Both rods and cones", " None of these"],
     answer: 1,
   },
   {
-    question: "The phenomena of light responsible for the working of the human eye is",
-    choices: ["Reflection", "Refraction", "Power of accommodation", "Persistence of vision"],
+    question:
+      "The phenomena of light responsible for the working of the human eye is",
+    choices: [
+      "Reflection",
+      "Refraction",
+      "Power of accommodation",
+      "Persistence of vision",
+    ],
     answer: 1,
   },
   {
-    question: "Which of the following colors is least scattered by fog, dust of smoke?",
+    question:
+      "Which of the following colors is least scattered by fog, dust of smoke?",
     choices: ["Violet", "Blue", "Red", "Yellow"],
     answer: 1,
   },
   {
-    question: "The colored light that refracts most while passing through a prism is",
-    choices: [
-      "Yellow",
-      "Violet",
-      "Blue",
-      "Red",
-    ],
+    question:
+      "The colored light that refracts most while passing through a prism is",
+    choices: ["Yellow", "Violet", "Blue", "Red"],
     answer: 1,
   },
   {
     question: "The amount of light entering the human eye is controlled by",
-    choices: [
-      "Ciliary muscles",
-      "Pupil",
-      "Cornea",
-      "Iris",
-    ],
+    choices: ["Ciliary muscles", "Pupil", "Cornea", "Iris"],
     answer: 1,
   },
   {
-    question: "The part of the eyes refracts light entering the eye from external objects?",
-    choices: [
-      "Lens",
-      "Cornea",
-      "Iris",
-      "Pupil",
-    ],
+    question:
+      "The part of the eyes refracts light entering the eye from external objects?",
+    choices: ["Lens", "Cornea", "Iris", "Pupil"],
     answer: 1,
   },
 ];
 
-
 var result = [
   {
-    image:
-      "http://www.reactiongifs.com/r/asm.gif",
+    image: "http://www.reactiongifs.com/r/asm.gif",
     comment: "Awesome!!",
   },
   {
-    image:
-      "http://www.reactiongifs.com/r/2012/11/naked-gun-facepalm.gif",
+    image: "http://www.reactiongifs.com/r/2012/11/naked-gun-facepalm.gif",
     comment: "Can do better!",
   },
   {
-    image:
-      "http://www.reactiongifs.com/wp-content/uploads/2013/06/empty.gif",
+    image: "http://www.reactiongifs.com/wp-content/uploads/2013/06/empty.gif",
     comment: "Better luck next time!",
   },
 ];
@@ -156,8 +142,9 @@ function end() {
   finalImage();
   $("ul").hide();
   $("h2").text(
-    `Your Score is : ${positiveScore - negativeScore},` + "\n" +
-    "\n You marked " +
+    `Your Score is : ${positiveScore - negativeScore},` +
+      "\n" +
+      "\n You marked " +
       totalCorrect +
       " answers correct out of " +
       allQuestions.length +
@@ -184,17 +171,18 @@ function finalImage() {
     totalCorrect >= allQuestions.length * 0.2
   ) {
     optionFinal = 1;
-  } 
-  else if (
-    totalCorrect <= allQuestions.length * 0.2
-  ) {
+  } else if (totalCorrect <= allQuestions.length * 0.2) {
     optionFinal = 2;
   }
 }
 
 function restart() {
   $("#try-again").click(function () {
-    (questionNumber = 0), (totalCorrect = 0), (optionFinal = 0), (positiveScore = 0), (negativeScore = 0);
+    (questionNumber = 0),
+      (totalCorrect = 0),
+      (optionFinal = 0),
+      (positiveScore = 0),
+      (negativeScore = 0);
 
     start(questionNumber);
     $("#image").hide();
@@ -202,7 +190,6 @@ function restart() {
     $("ul").fadeIn(400);
 
     quizTimer();
-
   });
 }
 
@@ -215,11 +202,12 @@ function answerCheck(userAnswer) {
     positiveScore = positiveScore + 20;
   } else {
     $("#" + userAnswer).addClass("incorrectStyle");
+    $("#" + correctAnswer).addClass("correctStyle");
     negativeScore = negativeScore + 5;
   }
 }
 
-async function quizTimer(duration,display) {
+async function quizTimer(duration, display) {
   var time = duration,
     minutes,
     seconds;
